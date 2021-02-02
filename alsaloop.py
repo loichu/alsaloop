@@ -67,7 +67,7 @@ def open_sound(output=False):
     if output:
         output_device = alsaaudio.PCM(
             alsaaudio.PCM_PLAYBACK,
-            alsaaudio.PCM_NONBLOCK
+            alsaaudio.PCM_NONBLOCK,
             device=DEVICE_NAME,
             channels=CHANNELS,
             rate=SAMPLE_RATE,
