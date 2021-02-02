@@ -61,7 +61,7 @@ def open_sound(output=False):
         device=DEVICE_NAME,
         channels=CHANNELS,
         rate=SAMPLE_RATE,
-        format=alsaaudio.PCM_FORMAT_S16_LE
+        format=alsaaudio.PCM_FORMAT_S16_LE,
         periodsize=PERIOD_SIZE )
 
     if output:
