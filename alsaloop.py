@@ -55,11 +55,14 @@ CHECK_NUMBER_BEFORE_TURN_OFF = int(SAMPLE_SECONDS_BEFORE_TURN_OFF / SAMPLE_SECON
 
 
 def open_sound(output=False):
-    input_device = alsaaudio.PCM(alsaaudio.PCM_CAPTURE, alsaaudio.PCM_NONBLOCK, device=DEVICE_NAME)
-    input_device.setchannels(CHANNELS)
-    input_device.setrate(SAMPLE_RATE)
-    input_device.setformat(alsaaudio.PCM_FORMAT_S16_LE)
-    input_device.setperiodsize(PERIOD_SIZE)
+    input_device = alsaaudio.PCM(
+        alsaaudio.PCM_CAPTURE,
+        alsaaudio.PCM_NONBLOCK,
+        device=DEVICE_NAME
+        channels=CHANNELS,
+        rate=SAMPLE_RATE,
+        format=alsaaudio.PCM_FORMAT_S16_LE
+        periodsize=PERIOD_SIZE )
 
     if output:
         output_device = alsaaudio.PCM(alsaaudio.PCM_PLAYBACK, alsaaudio.PCM_NONBLOCK, device=DEVICE_NAME)
