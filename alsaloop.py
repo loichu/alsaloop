@@ -58,7 +58,7 @@ def open_sound(output=False):
     input_device = alsaaudio.PCM(
         alsaaudio.PCM_CAPTURE,
         alsaaudio.PCM_NONBLOCK,
-        device=DEVICE_NAME
+        device=DEVICE_NAME,
         channels=CHANNELS,
         rate=SAMPLE_RATE,
         format=alsaaudio.PCM_FORMAT_S16_LE
