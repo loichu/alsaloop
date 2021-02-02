@@ -65,10 +65,14 @@ def open_sound(output=False):
         periodsize=PERIOD_SIZE )
 
     if output:
-        output_device = alsaaudio.PCM(alsaaudio.PCM_PLAYBACK, alsaaudio.PCM_NONBLOCK, device=DEVICE_NAME)
-        output_device.setchannels(CHANNELS)
-        output_device.setrate(SAMPLE_RATE)
-        output_device.setformat(alsaaudio.PCM_FORMAT_S16_LE)
+        output_device = alsaaudio.PCM(
+            alsaaudio.PCM_PLAYBACK,
+            alsaaudio.PCM_NONBLOCK
+            device=DEVICE_NAME,
+            channels=CHANNELS,
+            rate=SAMPLE_RATE,
+            format=alsaaudio.PCM_FORMAT_S16_LE,
+            periodsize=PERIOD_SIZE )
         return input_device, output_device
 
     else:
